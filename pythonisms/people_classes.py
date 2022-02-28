@@ -2,7 +2,8 @@ from pythonisms.weapon_classes import Bazooka, SniperRifle, MachineGun
 
 # squads is a dict with the names of the squad as the key
 class Army:
-  def __init__(self, squads = None):
+  def __init__(self, name, squads = None):
+    self.name = name
     self.total_army = {} if squads is None else squads
 
   def add_squads(self, squad):
@@ -11,12 +12,12 @@ class Army:
   def __iter__(self):
     def value_generator():
       for squad in self.total_army:
-        yield self.total_army[squad]
+        yield self.total_army[str(squad)]
     
     return value_generator()
 
   def __str__(self):
-    output = ""
+    output = f"{self.name}: "
     for squad in self:
       output += f"Squad:{str(squad)}\n"
     return output
@@ -45,13 +46,16 @@ class Squad:
 
   def __str__(self):
     output = f"{self.name} with: "
-    for soldier in self:
-      output += f"{soldier.name} "
+    for soldier in self.soldiers:
+      output += f"{soldier} "
     return output[:-1]
 
 class Soldier:
   def __init__(self, name):
     self.name = name
+
+  def __str__(self):
+    return self.name
 
 class HeavyWeapons(Soldier):
   def __init__(self, name):

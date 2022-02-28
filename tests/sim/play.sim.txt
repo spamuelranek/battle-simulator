@@ -1,0 +1,6 @@
+Would you like to play a game? y/n
+> y
+So glad you can join us today!
+Please pick a name for you army.
+> Test Army
+Test Army: has been created
