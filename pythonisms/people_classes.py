@@ -17,6 +17,12 @@ class Army:
     
     return value_generator()
 
+  def army_health(self):
+    output = 0
+    for squad in self:
+      output += squad.squad_health()
+    return output
+
   def __str__(self):
     output = f"{self.name}: "
     for squad in self:

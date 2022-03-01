@@ -6,4 +6,4 @@ Please pick a name for you army.
 Test Army: Squad:Monkey Brains with: Mark Tammy Ronix
 has been created
 Leader of Test Army, would you like to grow your army or go to the battlefield? buy/fight
-> q
+> buy

@@ -178,3 +178,41 @@ def test_squad_is_empty():
     actual = str(squad)
     expected = "Yoda with:"
     assert actual == expected
+
+def test_army_health():
+    mark = Sniper("Mar")
+    tammy = HeavyWeapons("Tam")
+    ronix = MachineGunner("Ron")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadb = Squad("Brains", peeps)
+
+    small_army = Army("Marco's Army")
+    small_army.add_squads(squadb)
+
+    actual = small_army.army_health()
+    expected = 325
+    assert actual == expected
+
+def test_army_health_multiple_squads():
+    mark = Sniper("Mark")
+    tammy = HeavyWeapons("Tammy")
+    ronix = MachineGunner("Ronix")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadmb = Squad("Monkey Brains", peeps)
+    mark = Sniper("Mar")
+    tammy = HeavyWeapons("Tam")
+    ronix = MachineGunner("Ron")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadb = Squad("Brains", peeps)
+    mark = Sniper("M")
+    tammy = HeavyWeapons("T")
+    ronix = MachineGunner("R")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadm = Squad("Monkey", peeps)
+    small_army = Army("Marco's Army")
+    small_army.add_squads(squadb)
+    small_army.add_squads(squadm)
+    small_army.add_squads(squadmb)
+    actual = small_army.army_health()
+    expected = 975
+    assert actual == expected
