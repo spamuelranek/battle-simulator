@@ -15,7 +15,7 @@ def test_start_game():
   diffs = diff(Game().start_game, path="tests/sim/start.sim.txt")
   assert not diffs, diffs
 
-@pytest.mark.skip()
+# @pytest.mark.skip()
 def test_play_game():
   diffs = diff(Game().start_game, path="tests/sim/play.sim.txt")
   assert not diffs, diffs  

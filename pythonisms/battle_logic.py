@@ -36,5 +36,6 @@ class Game:
     print(self.phrase_bank["play"])
     print(self.phrase_bank["army_name"])
     response = input('> ')
-    player_army = Army(response, self.starting_squad())
+    player_army = Army(response)
+    player_army.add_squads(self.starting_squad())
     print(str(player_army), self.phrase_bank["created"])

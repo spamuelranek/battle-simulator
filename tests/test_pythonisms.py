@@ -152,6 +152,21 @@ def test_str_army():
     expected = '''Marco's Army: Squad:Brains with: Mar Tam Ron\nSquad:Monkey with: M T R\nSquad:Monkey Brains with: Mark Tammy Ronix\n'''
     assert actual == expected
 
+def test_str_army_built_in():
+
+    mark = Sniper("Mar")
+    tammy = HeavyWeapons("Tam")
+    ronix = MachineGunner("Ron")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadb = Squad("Brains", peeps)
+
+    small_army = Army("Marco's Army")
+    small_army.add_squads(squadb)
+
+    actual = str(small_army)
+    expected = '''Marco's Army: Squad:Brains with: Mar Tam Ron\n'''
+    assert actual == expected
+
 def test_army_is_empty():
     small_army = Army("Test Army")
     actual = str(small_army)

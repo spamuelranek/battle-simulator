@@ -1,6 +1,7 @@
 from pythonisms.weapon_classes import Bazooka, SniperRifle, MachineGun
 
 # squads is a dict with the names of the squad as the key
+# Note: If you pass a squad into the Army on init the value it currently breaks iter
 class Army:
   def __init__(self, name, squads = None):
     self.name = name
@@ -12,7 +13,7 @@ class Army:
   def __iter__(self):
     def value_generator():
       for squad in self.total_army:
-        yield self.total_army[str(squad)]
+        yield self.total_army[squad]
     
     return value_generator()
 
@@ -46,8 +47,8 @@ class Squad:
 
   def __str__(self):
     output = f"{self.name} with: "
-    for soldier in self.soldiers:
-      output += f"{soldier} "
+    for soldier in self:
+      output += f"{soldier.name} "
     return output[:-1]
 
 class Soldier:
