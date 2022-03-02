@@ -18,7 +18,7 @@ def test_is_squad_subscript():
     squadmb = Squad("Monkey Brains")
     squadb = Squad("Brains")
     squadm = Squad("Monkey")
-    small_army = Army()
+    small_army = Army("Test Army")
     small_army.add_squads(squadb)
     small_army.add_squads(squadm)
     small_army.add_squads(squadmb)
@@ -30,7 +30,7 @@ def test_is_squad_iterable():
     squadmb = Squad("Monkey Brains")
     squadb = Squad("Brains")
     squadm = Squad("Monkey")
-    small_army = Army()
+    small_army = Army("Test Army")
     small_army.add_squads(squadb)
     small_army.add_squads(squadm)
     small_army.add_squads(squadmb)
@@ -132,34 +132,87 @@ def test_str_army():
     mark = Sniper("Mark")
     tammy = HeavyWeapons("Tammy")
     ronix = MachineGunner("Ronix")
-    peps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
-    squadmb = Squad("Monkey Brains", peps)
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadmb = Squad("Monkey Brains", peeps)
     mark = Sniper("Mar")
     tammy = HeavyWeapons("Tam")
     ronix = MachineGunner("Ron")
-    peps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
-    squadb = Squad("Brains", peps)
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadb = Squad("Brains", peeps)
     mark = Sniper("M")
     tammy = HeavyWeapons("T")
     ronix = MachineGunner("R")
-    peps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
-    squadm = Squad("Monkey", peps)
-    small_army = Army()
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadm = Squad("Monkey", peeps)
+    small_army = Army("Marco's Army")
     small_army.add_squads(squadb)
     small_army.add_squads(squadm)
     small_army.add_squads(squadmb)
     actual = str(small_army)
-    expected = '''Squad:Brains with: Mar Tam Ron\nSquad:Monkey with: M T R\nSquad:Monkey Brains with: Mark Tammy Ronix\n'''
+    expected = '''Marco's Army: Squad:Brains with: Mar Tam Ron\nSquad:Monkey with: M T R\nSquad:Monkey Brains with: Mark Tammy Ronix\n'''
+    assert actual == expected
+
+def test_str_army_built_in():
+
+    mark = Sniper("Mar")
+    tammy = HeavyWeapons("Tam")
+    ronix = MachineGunner("Ron")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadb = Squad("Brains", peeps)
+
+    small_army = Army("Marco's Army")
+    small_army.add_squads(squadb)
+
+    actual = str(small_army)
+    expected = '''Marco's Army: Squad:Brains with: Mar Tam Ron\n'''
     assert actual == expected
 
 def test_army_is_empty():
-    small_army = Army()
+    small_army = Army("Test Army")
     actual = str(small_army)
-    expected = ""
+    expected = "Test Army: "
     assert actual == expected
 
 def test_squad_is_empty():
     squad = Squad("Yoda")
     actual = str(squad)
     expected = "Yoda with:"
+    assert actual == expected
+
+def test_army_health():
+    mark = Sniper("Mar")
+    tammy = HeavyWeapons("Tam")
+    ronix = MachineGunner("Ron")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadb = Squad("Brains", peeps)
+
+    small_army = Army("Marco's Army")
+    small_army.add_squads(squadb)
+
+    actual = small_army.army_health()
+    expected = 325
+    assert actual == expected
+
+def test_army_health_multiple_squads():
+    mark = Sniper("Mark")
+    tammy = HeavyWeapons("Tammy")
+    ronix = MachineGunner("Ronix")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadmb = Squad("Monkey Brains", peeps)
+    mark = Sniper("Mar")
+    tammy = HeavyWeapons("Tam")
+    ronix = MachineGunner("Ron")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadb = Squad("Brains", peeps)
+    mark = Sniper("M")
+    tammy = HeavyWeapons("T")
+    ronix = MachineGunner("R")
+    peeps = {mark.name:mark, tammy.name:tammy, ronix.name:ronix}
+    squadm = Squad("Monkey", peeps)
+    small_army = Army("Marco's Army")
+    small_army.add_squads(squadb)
+    small_army.add_squads(squadm)
+    small_army.add_squads(squadmb)
+    actual = small_army.army_health()
+    expected = 975
     assert actual == expected
