@@ -193,6 +193,12 @@ def test_army_health():
     expected = 325
     assert actual == expected
 
+def test_army_credit():
+    army = Army("Marco")
+    actual = army.credits
+    expected = 100
+    assert actual == expected
+
 def test_army_health_multiple_squads():
     mark = Sniper("Mark")
     tammy = HeavyWeapons("Tammy")

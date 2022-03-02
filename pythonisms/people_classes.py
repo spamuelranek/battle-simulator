@@ -6,6 +6,7 @@ class Army:
   def __init__(self, name, squads = None):
     self.name = name
     self.total_army = {} if squads is None else squads
+    self.credits = 100
 
   def add_squads(self, squad):
     self.total_army[squad.name]=squad
@@ -67,20 +68,20 @@ class Soldier:
 class HeavyWeapons(Soldier):
   def __init__(self, name):
     super().__init__(name)
-    self.weapon = Bazooka
+    self.weapon = Bazooka()
     self.cry = "Its a big boom"
     self.health = 150
 
 class Sniper(Soldier):
   def __init__(self, name):
     super().__init__(name)
-    self.weapon = SniperRifle
+    self.weapon = SniperRifle()
     self.cry = "HEADSHOT"
     self.health = 75
 
 class MachineGunner(Soldier):
   def __init__(self, name):
     super().__init__(name)
-    self.weapon = MachineGun
+    self.weapon = MachineGun()
     self.cry = "Say Hello to My little friend"
     self.health = 100

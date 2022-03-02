@@ -18,4 +18,16 @@ def test_start_game():
 # @pytest.mark.skip()
 def test_play_game():
   diffs = diff(Game().start_game, path="tests/sim/play.sim.txt")
-  assert not diffs, diffs  
+  assert not diffs, diffs
+
+def test_shop_game():
+  diffs = diff(Game().start_game, path="tests/sim/shop.sim.txt")
+  assert not diffs, diffs
+
+def test_shop_leave_game():
+  diffs = diff(Game().start_game, path="tests/sim/shop_leave.sim.txt")
+  assert not diffs, diffs
+
+def test_shop_train_game():
+  diffs = diff(Game().start_game, path="tests/sim/shop_train.sim.txt")
+  assert not diffs, diffs

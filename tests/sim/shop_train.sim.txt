@@ -10,4 +10,12 @@ Leader of Test Army, would you like to grow your army or go to the battlefield? 
 Welcome to the WAR shop. Here you can train new soliders or whole new squads.
 Test Army has 100 credits
  'Train a Sniper'      100 credits
+> Train a Sniper
+What is the name of the Solider?
+> Bobby
+Bobby uses:
+Sniper Rifle and
+has 75 health
+Which squad would you liked add this solider to?
+Squads available: Monkey Brains 
 > q
