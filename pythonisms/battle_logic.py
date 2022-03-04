@@ -20,7 +20,8 @@ class Game:
     "shop_options": " 'Train a Sniper'      100 credits",
     "shop_not_enough_money": "Sorry your credit amount is too low to pay for this option.",
     "train_solider_name": "What is the name of the Solider?",
-    "train_solider_squad": "Which squad would you liked add this solider to?"}
+    "train_solider_squad": "Which squad would you liked add this solider to?",
+    "choose_a_valid_squad": "Please select from the available squads"}
 
   def starting_squad(self):
     mark = Sniper("Mark")
@@ -121,8 +122,17 @@ class Game:
       squad_names += f"{squad.name} "
 
     print(squad_names)
-    response = input('> ')
-    response = self.input_validation_for_quit(response)
+
+    chose_a_valid_squad = False
+    while not chose_a_valid_squad:
+      response = input('> ')
+      response = self.input_validation_for_quit(response)
+
+      chosen_squad = player_army.total_army.get(response)
+      if chosen_squad:
+        chosen_squad.add_solider(new_solider)
+        break
+      print(self.phrase_bank["choose_a_valid_squad"])
 
 
   def battle(self):

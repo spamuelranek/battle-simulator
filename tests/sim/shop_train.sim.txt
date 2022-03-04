@@ -18,4 +18,6 @@ Sniper Rifle and
 has 75 health
 Which squad would you liked add this solider to?
 Squads available: Monkey Brains 
+> Test
+Please select from the available squads
 > q
