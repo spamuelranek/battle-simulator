@@ -12,6 +12,18 @@ Test Army has 100 credits
  'Train a Sniper'    100 credits
  'Train a MachineGunner'    100 credits
  'Train a HeavyWeapons'   100 credits
-> leave shop
-Leader of Test Army, would you like to grow your army or go to the battlefield? buy/fight
+> Train a Sniper
+What is the name of the Solider?
+> Bobby
+Bobby uses:
+Sniper Rifle and
+has 75 health
+Which squad would you liked add this solider to?
+Squads available: Monkey Brains 
+> Monkey Brains
+Monkey Brains with: Mark Tammy Ronix Bobby
+Test Army has 0 credits
+ 'Train a Sniper'    100 credits
+ 'Train a MachineGunner'    100 credits
+ 'Train a HeavyWeapons'   100 credits
 > q

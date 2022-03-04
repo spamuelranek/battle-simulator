@@ -31,3 +31,7 @@ def test_shop_leave_game():
 def test_shop_train_game():
   diffs = diff(Game().start_game, path="tests/sim/shop_train.sim.txt")
   assert not diffs, diffs
+
+def test_shop_train_game():
+  diffs = diff(Game().start_game, path="tests/sim/shop_choose_squad.sim.txt")
+  assert not diffs, diffs

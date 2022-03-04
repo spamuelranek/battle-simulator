@@ -17,7 +17,9 @@ class Game:
     "created": "has been created",
     "buy_or_fight": "would you like to grow your army or go to the battlefield? buy/fight",
     "shop_welcome": "Welcome to the WAR shop. Here you can train new soliders or whole new squads.",
-    "shop_options": " 'Train a Sniper'      100 credits",
+    "shop_options": """ 'Train a Sniper'    100 credits
+ 'Train a MachineGunner'    100 credits
+ 'Train a HeavyWeapons'   100 credits""",
     "shop_not_enough_money": "Sorry your credit amount is too low to pay for this option.",
     "train_solider_name": "What is the name of the Solider?",
     "train_solider_squad": "Which squad would you liked add this solider to?",
@@ -74,7 +76,9 @@ class Game:
 
   def shop(self, player_army):
     in_shop = True
-    solider_training_options = {'Train a Sniper': "sniper"}
+    solider_training_options = {'Train a Sniper': "sniper",
+    'Train a MachineGunner': "machinegunner",
+    'Train a HeavyWeapons' : "heavyweapons"}
     store_pricing = {'Train a Sniper' : 100}
 
     print(self.phrase_bank["shop_welcome"])
@@ -130,8 +134,9 @@ class Game:
 
       chosen_squad = player_army.total_army.get(response)
       if chosen_squad:
-        chosen_squad.add_solider(new_solider)
-        break
+        chosen_squad.add_soldiers(new_solider)
+        print(str(chosen_squad))
+        return player_army
       print(self.phrase_bank["choose_a_valid_squad"])
 
 

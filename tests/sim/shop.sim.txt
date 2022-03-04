@@ -9,5 +9,7 @@ Leader of Test Army, would you like to grow your army or go to the battlefield? 
 > buy
 Welcome to the WAR shop. Here you can train new soliders or whole new squads.
 Test Army has 100 credits
- 'Train a Sniper'      100 credits
+ 'Train a Sniper'    100 credits
+ 'Train a MachineGunner'    100 credits
+ 'Train a HeavyWeapons'   100 credits
 > q
