@@ -32,6 +32,18 @@ def test_shop_train_game():
   diffs = diff(Game().start_game, path="tests/sim/shop_train.sim.txt")
   assert not diffs, diffs
 
-def test_shop_train_game():
+def test_shop_train_game_sniper():
   diffs = diff(Game().start_game, path="tests/sim/shop_choose_squad.sim.txt")
+  assert not diffs, diffs
+
+def test_shop_train_game_heavyweapons():
+  diffs = diff(Game().start_game, path="tests/sim/shop_choose_squad_heavyweapons.sim.txt")
+  assert not diffs, diffs
+
+def test_shop_train_game_machinegun():
+  diffs = diff(Game().start_game, path="tests/sim/shop_choose_squad_machinegunner.sim.txt")
+  assert not diffs, diffs
+
+def test_battle_start():
+  diffs = diff(Game().start_game, path="tests/sim/battle_start.sim.txt")
   assert not diffs, diffs

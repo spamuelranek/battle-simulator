@@ -25,6 +25,13 @@ class Game:
     "train_solider_squad": "Which squad would you liked add this solider to?",
     "choose_a_valid_squad": "Please select from the available squads"}
 
+    self.battle_phrase_bank = {"battle_welcome" : """Welcome to the battle arena.
+This is where you will find out if you have the best army and tatics.
+There will be 10 levels to master
+You may retreat at any time, but it will cost you 100 credits.
+If you do not have 100 credits then it comes to a coin flip.
+The rest of the instructions will be presented as you go along."""}
+
   def starting_squad(self):
     mark = Sniper("Mark")
     tammy = HeavyWeapons("Tammy")
@@ -57,7 +64,7 @@ class Game:
       response = self.input_validation_for_quit(response)
       if response == "buy":
         self.shop(player_army)
-      elif response == "battle":
+      elif response == "fight":
         self.battle(player_army)    
 
   def input_validation_for_quit(self,response):
@@ -79,7 +86,9 @@ class Game:
     solider_training_options = {'Train a Sniper': "sniper",
     'Train a MachineGunner': "machinegunner",
     'Train a HeavyWeapons' : "heavyweapons"}
-    store_pricing = {'Train a Sniper' : 100}
+    store_pricing = {'Train a Sniper' : 100,
+    'Train a HeavyWeapons' : 100,
+    'Train a MachineGunner' : 100}
 
     print(self.phrase_bank["shop_welcome"])
 
@@ -140,5 +149,5 @@ class Game:
       print(self.phrase_bank["choose_a_valid_squad"])
 
 
-  def battle(self):
-    pass
+  def battle(self, player_army):
+    print(self.battle_phrase_bank["battle_welcome"])

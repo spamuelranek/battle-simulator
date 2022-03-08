@@ -1,0 +1,17 @@
+Would you like to play a game? y/n
+> y
+So glad you can join us today!
+Please pick a name for you army.
+> Test Army
+Test Army: Squad:Monkey Brains with: Mark Tammy Ronix
+has been created
+Leader of Test Army, would you like to grow your army or go to the battlefield? buy/fight
+> fight
+Welcome to the battle arena.
+This is where you will find out if you have the best army and tatics.
+There will be 10 levels to master
+You may retreat at any time, but it will cost you 100 credits.
+If you do not have 100 credits then it comes to a coin flip.
+The rest of the instructions will be presented as you go along.
+Leader of Test Army, would you like to grow your army or go to the battlefield? buy/fight
+> q

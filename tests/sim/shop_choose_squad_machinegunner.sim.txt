@@ -12,14 +12,18 @@ Test Army has 100 credits
  'Train a Sniper'    100 credits
  'Train a MachineGunner'    100 credits
  'Train a HeavyWeapons'   100 credits
-> Train a Sniper
+> Train a MachineGunner
 What is the name of the Solider?
 > Bobby
 Bobby uses:
-Sniper Rifle and
-has 75 health
+Machine Gun and
+has 100 health
 Which squad would you liked add this solider to?
 Squads available: Monkey Brains 
-> Test
-Please select from the available squads
+> Monkey Brains
+Monkey Brains with: Mark Tammy Ronix Bobby
+Test Army has 0 credits
+ 'Train a Sniper'    100 credits
+ 'Train a MachineGunner'    100 credits
+ 'Train a HeavyWeapons'   100 credits
 > q
