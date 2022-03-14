@@ -151,3 +151,8 @@ The rest of the instructions will be presented as you go along."""}
 
   def battle(self, player_army):
     print(self.battle_phrase_bank["battle_welcome"])
+
+
+if __name__ == "__main__":
+  game = Game()
+  game.start_game()
